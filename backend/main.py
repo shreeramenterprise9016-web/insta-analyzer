@@ -1,3 +1,9 @@
+import sys
+import os
+
+# Fix import path for Render/Gunicorn
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from analyzer import InstagramAnalyzer
